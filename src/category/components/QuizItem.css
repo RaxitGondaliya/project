@@ -1,0 +1,101 @@
+.quiz-item {
+  margin: 1rem 0;
+}
+
+.quiz-item__content {
+  padding: 0;
+}
+
+.quiz-item__question {
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+.quiz-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Adds spacing between options */
+  margin: 2rem;
+}
+
+.quiz-item__info label {
+  display: flex;
+  align-items: center; /* Align radio button and text vertically */
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border: 1px solid #ccc; /* Border for each option */
+  border-radius: 4px;
+}
+
+.quiz-item__info input {
+  margin-right: 1rem; /* Space between radio button and text */
+  accent-color: #4CAF50; /* Custom color for radio button */
+  width: 20px;
+  height: 20px;
+}
+
+.quiz-item__info label:hover {
+  background-color: #f0f0f0; /* Hover effect */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.quiz-item__option {
+  font-weight: bold;
+}
+
+.quiz-item__info input:checked + .quiz-item__option {
+  color: #4CAF50; /* Color when an option is selected */
+}
+
+.quiz-item__info label:active {
+  background-color: #e0e0e0; /* Active state */
+}
+
+
+.quiz-item__image {
+  width: 100%;
+  height: 12.5rem;
+  margin-right: 1.5rem;
+}
+
+.quiz-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quiz-item__actions {
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
+
+.quiz-item__modal-content {
+  padding: 0;
+}
+
+.quiz-item__modal-actions {
+  text-align: right;
+}
+
+.quiz-item__actions button,
+.quiz-item__actions a {
+  margin: 0.5rem;
+}
+
+.map-container {
+  height: 20rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .place-item__image {
+    height: 20rem;
+  }
+}
+
+.quiz-item__question {
+  margin: 2rem;
+  padding: 1rem;
+}
