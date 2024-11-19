@@ -1,50 +1,60 @@
 .category-item {
   margin: 1rem;
-  width: calc(45% - 2rem);
-  min-width: 17.5rem;
+  width: 18rem; /* Fixed width */
+  height: 12rem; /* Fixed height to make it a square */
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+
+}
+
+.category-item:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
 }
 
 .category-item a {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   text-decoration: none;
   padding: 1rem;
   color: white;
-  background: #292929;
+  background: white;
+  flex-direction: column; /* Center content vertically */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
 }
 
 .category-item a:hover,
 .category-item a:active {
-  background: #ffd900;
+  background: white; /* Change to a darker gray instead of yellow */
 }
 
 .category-item__content {
   padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .category-item__image {
   width: 4rem;
   height: 4rem;
-  margin-right: 1rem;
+  margin-bottom: 1.5rem; /* Adjust for vertical alignment */
 }
 
 .category-item__info h2 {
   font-size: 1.5rem;
   margin: 0 0 0.5rem 0;
   font-weight: normal;
-  color: #ffd900;
+  color: black;
+  text-align: center;
+  transition: color 0.3s ease; /* Smooth color transition */
 }
 
-.category-item:hover h2,
-.category-item:active h2,
-.category-item:hover h3,
-.category-item:active h3 {
-  color: #292929;
-}
+/* .category-item:hover h2,
+.category-item:active h2 {
+  color: black; 
+} */
 
 .category-item__info h3 {
   margin: 0;
 }
-

@@ -1,18 +1,13 @@
-import React, { useState, useCallback } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Switch
-} from 'react-router-dom';
-
-import Category from './user/pages/Category';
-import NewQuiz from './category/pages/NewQuiz';
-import UserQuiz from './category/pages/UserQuiz';
-import UpdateQuiz from './category/pages/UpdateQuiz';
-import Auth from './user/pages/Auth';
-import MainNavigation from './shared/components/Navigation/MainNavigation';
-import { AuthContext } from './shared/context/auth-context';
+import React, { useState, useCallback } from "react";
+import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
+import Category from "./user/pages/Category";
+import NewQuiz from "./category/pages/NewQuiz";
+import UserQuiz from "./category/pages/UserQuiz";
+import UpdateQuiz from "./category/pages/UpdateQuiz";
+import Login from "./user/pages/Login"; // Import the Login component
+import Signup from "./user/pages/Signup"; // Import the Signup component
+import MainNavigation from "./shared/components/Navigation/MainNavigation";
+import { AuthContext } from "./shared/context/auth-context";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -54,10 +49,13 @@ const App = () => {
         <Route path="/:userId/places" exact>
           <UserQuiz />
         </Route>
-        <Route path="/auth">
-          <Auth />
+        <Route path="/login">
+          <Login />
         </Route>
-        <Redirect to="/auth" />
+        <Route path="/signup"> {/* Add the signup route here */}
+          <Signup />
+        </Route>
+        <Redirect to="/login" />
       </Switch>
     );
   }
@@ -68,9 +66,7 @@ const App = () => {
     >
       <Router>
         <MainNavigation />
-        <main>
-          {routes}
-        </main>
+        <main>{routes}</main>
       </Router>
     </AuthContext.Provider>
   );
