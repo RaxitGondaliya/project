@@ -3,7 +3,8 @@
   width: 18rem; /* Fixed width */
   height: 12rem; /* Fixed height to make it a square */
   transition: transform 0.3s ease; /* Smooth scaling effect */
-
+  background-color: var(--card-bg); /* Dynamic background for light/dark mode */
+  color: var(--text-color); /* Dynamic text color for light/dark mode */
 }
 
 .category-item:hover {
@@ -18,15 +19,16 @@
   height: 100%;
   text-decoration: none;
   padding: 1rem;
-  color: white;
-  background: white;
+  background: var(--card-bg); /* Dynamic background for light/dark mode */
+  color: var(--text-color); /* Dynamic text color for light/dark mode */
   flex-direction: column; /* Center content vertically */
-  transition: background-color 0.3s ease; /* Smooth background color transition */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth background and text color transitions */
 }
 
 .category-item a:hover,
 .category-item a:active {
-  background: white; /* Change to a darker gray instead of yellow */
+  background: var(--hover-bg); /* Dynamic hover background */
+  color: var(--hover-text-color); /* Dynamic hover text color */
 }
 
 .category-item__content {
@@ -36,8 +38,8 @@
 }
 
 .category-item__image {
-  width: 4rem;
-  height: 4rem;
+  width: 4rem; /* Fixed size */
+  height: 4rem; /* Fixed size */
   margin-bottom: 1.5rem; /* Adjust for vertical alignment */
 }
 
@@ -45,16 +47,23 @@
   font-size: 1.5rem;
   margin: 0 0 0.5rem 0;
   font-weight: normal;
-  color: black;
+  color: var(--text-color); /* Dynamic text color for light/dark mode */
   text-align: center;
   transition: color 0.3s ease; /* Smooth color transition */
 }
 
-/* .category-item:hover h2,
-.category-item:active h2 {
-  color: black; 
-} */
+/* Light mode variables */
+body.light-mode {
+  --card-bg: #ffffff; /* Light mode card background */
+  --text-color: #292929; /* Light mode text color */
+  --hover-bg: #f0f4ff; /* Light mode hover background */
+  --hover-text-color: #004085; /* Light mode hover text color */
+}
 
-.category-item__info h3 {
-  margin: 0;
+/* Dark mode variables */
+body.dark-mode {
+  --card-bg: #1e293b; /* Dark mode card background */
+  --text-color: #e2e8f0; /* Dark mode text color */
+  --hover-bg: #334155; /* Dark mode hover background */
+  --hover-text-color: #cbd5e1; /* Dark mode hover text color */
 }
